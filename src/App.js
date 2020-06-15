@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './App.css';
 
 const App = () => {
   const [rate, setRate] = useState(35)
@@ -22,18 +23,27 @@ const App = () => {
   }
 
   return (
-    <div>
+    <div className="container">
+      <div className="left-side">
       <div>
-        Arány: 1:<input type="number" value={rate} onChange={handleRate}/>
+        <p className="text">Keverési arány: </p>
+        <div>
+        <p className="text" style={{fontSize: '2rem', width: '10%'}}>1: </p><input style={{width: '90%'}} type="number" value={rate} onChange={handleRate}/>
+        </div>
+        
       </div>
       <div>
-        Üzemanyag: <input type="number" value={petrol} onChange={handlePetrol}/> liter
+      <p className="text">Üzemanyag: </p><input type="number" value={petrol} onChange={handlePetrol}/> <p className="text"> liter</p>
       </div>
-      <button onClick={rateCounter}>
-        Kiszámol
+      <button className="button" onClick={rateCounter}>
+        <p className="text">Kiszámol</p>
       </button>
-      <div>
-        {Math.round(result)} ml
+      </div>
+      
+      <div className="right-side">
+        <p className="result text">
+          {Math.round(result)} ml
+        </p>
       </div>
     </div>
   )
