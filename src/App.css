@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@300&display=swap');
 
+* {
+  font-family: 'MuseoModerno', cursive;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 body {
   background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8) ), url('./images/background.jpg');
   background-repeat: no-repeat;
@@ -8,24 +15,67 @@ body {
   padding: 2rem;
 }
 
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 16px 10px;
+  background-color: rgb(121, 121, 121);
+}
+
+.nav-logo {
+  display: inline;
+  color: #fff;
+  font-size: 2rem;
+  padding: 20px;
+}
+
+.nav-text {
+  display: inline;
+  font-size: 1.4rem;
+  color: #fff;
+}
+
 .container {
-  display: flex;
   background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 4px;
   margin: auto;
   width: 50%;
   text-align: center;
   padding: 1.2rem;
 }
 
+.calculator {
+  display: flex;
+  flex-direction: row;
+}
+
+.result-list {
+  display: flex;
+}
+
+.list-item {
+  flex-direction: column;
+  background-color: rgba(53, 53, 53, 0.6);
+  margin: 2px 4px;
+  padding: 2px 4px;
+  color: #fff;
+  border-radius: 3px;
+  border: solid 1px #ccc;
+}
+
+.list-item span {
+  display: block;
+}
+
 .text {
-  font-family: 'MuseoModerno', cursive;
   display: inline;
   color: #fff;
   font-size: 1.6rem;
 }
 
 input[type=number], select {
-  font-family: 'MuseoModerno', cursive;
   background-color: rgba(53, 53, 53, 0.6);
   width: 100%;
   padding: 6px 10px;
