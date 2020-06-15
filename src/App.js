@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 const App = () => {
-  const [rate, setRate] = useState(35)
-  const [petrol, setPetrol] = useState(30)
+  const [rate, setRate] = useState(50)
+  const [petrol, setPetrol] = useState(10)
   const [result, setResult] = useState(0)
 
   useEffect(() => {
@@ -28,12 +28,16 @@ const App = () => {
       <div>
         <p className="text">Keverési arány: </p>
         <div>
-        <p className="text" style={{fontSize: '2rem', width: '10%'}}>1: </p><input style={{width: '90%'}} type="number" value={rate} onChange={handleRate}/>
+          <p className="text" style={{fontSize: '2rem', width: '15%'}}>1: </p>
+          <input style={{width: '85%'}} type="number" value={rate} onChange={handleRate}/>
         </div>
-        
       </div>
       <div>
-      <p className="text">Üzemanyag: </p><input type="number" value={petrol} onChange={handlePetrol}/> <p className="text"> liter</p>
+      <p className="text">Üzemanyag: </p>
+      <div>
+        <input style={{width: '75%'}} type="number" value={petrol} onChange={handlePetrol}/>
+        <p style={{width: '25%'}} className="text"> liter</p>
+      </div>
       </div>
       <button className="button" onClick={rateCounter}>
         <p className="text">Kiszámol</p>
