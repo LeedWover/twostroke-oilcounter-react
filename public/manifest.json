@@ -1,6 +1,8 @@
 {
   "short_name": "Two stroke calc",
   "name": "Two stroke engine oil calculator",
+  "default_locale": "hu",
+  "description": "This website is for calculate, how much oil you need in a two stroke engine.",
   "icons": [
     {
       "src": "oil_logo.png",
