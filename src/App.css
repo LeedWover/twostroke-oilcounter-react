@@ -12,7 +12,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
-  padding: 2rem;
+  overflow-x: hidden;
 }
 
 .nav {
@@ -40,10 +40,11 @@ body {
 .container {
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 4px;
-  margin: auto;
+  margin: 8rem auto 2rem auto !important;
   width: 50%;
   text-align: center;
   padding: 1.2rem;
+  min-height: 80vh;
 }
 
 .calculator {
@@ -179,13 +180,12 @@ input[type=text] {
 }
 
 .footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  margin-top:auto;
+  margin-left: 0;
   width: 100vw;
-  padding: 16px 10px;
   background-color: rgb(121, 121, 121);
   color: #fff;
+  padding: 4px;
   text-align: right;
 }
 
@@ -193,5 +193,66 @@ input[type=text] {
   .container {
     width: 80%;
     flex-direction: column;
+  }
+  .text {
+    font-size: 1.4rem;
+  }
+  .button {
+    width: 85%;
+    margin: 7px;
+    padding: 2px 12px;
+    font-size: 13px;
+  }
+  .result {
+    font-size: 2rem;
+  }
+  .list-item {
+    flex-direction: column;
+    width: 48%;
+    background-color: rgba(53, 53, 53, 0.6);
+    margin: 2px 4px;
+    padding: 2px 4px;
+    color: #fff;
+    border-radius: 3px;
+    border: solid 1px #ccc;
+  }
+  input[type=number] {
+    padding: 3px 6px;
+    margin: 4px 0;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 740px) {
+  .container {
+    width: 95%;
+    flex-direction: column;
+  }
+  .text {
+    font-size: 1.1rem;
+  }
+  .button {
+    width: 85%;
+    margin: 7px;
+    padding: 2px 12px;
+    font-size: 13px;
+  }
+  .result {
+    font-size: 2rem;
+  }
+  .list-item {
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(53, 53, 53, 0.6);
+    margin: 2px 4px;
+    padding: 2px 4px;
+    color: #fff;
+    border-radius: 3px;
+    border: solid 1px #ccc;
+  }
+  input[type=number] {
+    padding: 3px 6px;
+    margin: 4px 0;
+    font-size: 1rem;
   }
 }

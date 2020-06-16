@@ -76,7 +76,8 @@ const App = () => {
   }
   
   const deleteAll = () => {
-    setMessage('Összes elem kitörölve');
+    if (window.confirm("Biztos kitörlöd az összes mentett elemet?")) { 
+      setMessage('Összes elem kitörölve');
       setType('success')
       setTimeout(() => {
         setMessage('');
@@ -84,10 +85,11 @@ const App = () => {
       }, 3000);
     localStorage.clear();
     setSavedList([]);
+    }
   }
 
   return (
-    <div>
+    <>
       <Header/>
       <div style={{marginTop: '90px'}} className="container">
         {message && (<MessageBox type={messageType}>{message}</MessageBox>)}
@@ -136,7 +138,7 @@ const App = () => {
         
       </div>
       <Footer />
-    </div>
+    </>
   )
 }
 
