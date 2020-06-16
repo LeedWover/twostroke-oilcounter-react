@@ -145,8 +145,37 @@ input[type=text] {
   font-size: 18px;
 }
 
+.delete-all-btn {
+  cursor: pointer;
+  background-color: rgba(53, 53, 53, 0.7);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: rgb(255, 0, 0);
+  margin: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  width: 100%;
+}
+
 .result {
   font-size: 4rem;
+}
+
+.message-box {
+  display: block;
+  border: solid 1px #fff;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.warning {
+  background: rgba(255, 0, 0, 0.5);
+}
+
+.success {
+  background: rgba(33, 196, 0, 0.5);
 }
 
 .footer {

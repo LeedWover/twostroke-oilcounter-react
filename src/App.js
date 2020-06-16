@@ -4,12 +4,15 @@ import './App.css';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
+import MessageBox from './components/MessageBox';
 
 const App = () => {
   const [rate, setRate] = useState(50)
   const [petrol, setPetrol] = useState(10)
   const [result, setResult] = useState(0)
   const [name, setName] = useState('')
+  const [message, setMessage] = useState('')
+  const [messageType, setType] = useState('')
   const [savedList, setSavedList] = useState(JSON.parse(localStorage.getItem('items')) || [])
 
   useEffect(() => {
@@ -38,8 +41,19 @@ const App = () => {
 
   const save = () => {
     if(!name) {
-      alert('Adj meg nevet, mielőtt mentenél')
+      setMessage('Írj be nevet a mentéshez');
+      setType('warning')
+      setTimeout(() => {
+        setMessage('');
+        setType('');
+      }, 3000);
     } else {
+      setMessage('Sikeres mentés');
+      setType('success')
+      setTimeout(() => {
+        setMessage('');
+        setType('');
+      }, 3000);
       setSavedList([...savedList, {
         id: uuid(),
         name,
@@ -51,14 +65,32 @@ const App = () => {
   };
 
   const removeItem = (id) => {
+    setMessage('Elem kitörölve');
+      setType('success')
+      setTimeout(() => {
+        setMessage('');
+        setType('');
+      }, 3000);
     const filteredArray = savedList.filter(item => item.id !== id)
     setSavedList(filteredArray)
+  }
+  
+  const deleteAll = () => {
+    setMessage('Összes elem kitörölve');
+      setType('success')
+      setTimeout(() => {
+        setMessage('');
+        setType('');
+      }, 3000);
+    localStorage.clear();
+    setSavedList([]);
   }
 
   return (
     <div>
       <Header/>
       <div style={{marginTop: '90px'}} className="container">
+        {message && (<MessageBox type={messageType}>{message}</MessageBox>)}
         <div className="calculator">
           <div className="left-side">
             <div>
@@ -95,10 +127,13 @@ const App = () => {
               <span>Arány: 1:{item.rate}</span>
               <span>Benzin: {item.petrol} l</span>
               <span>Olaj: {Math.round(item.result)} ml</span>
-              <span><button className="delete-button" onClick={() => removeItem(item.id)}><i class="far fa-trash-alt"></i></button></span>
+              <span><button className="delete-button" onClick={() => removeItem(item.id)}><i className="far fa-trash-alt"></i></button></span>
           </div>
           ))}
+          
         </div>
+        {savedList.length ? (<div><button className="delete-all-btn" onClick={deleteAll}>Összes törlése</button></div>) : null}
+        
       </div>
       <Footer />
     </div>

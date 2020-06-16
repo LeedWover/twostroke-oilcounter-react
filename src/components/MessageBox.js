@@ -1,8 +1,8 @@
 import React from 'react'
 
-const MessageBox = ({children}) => {
+const MessageBox = ({children, type}) => {
   return (
-    <div className="message-box">
+    <div className={`message-box ${type}`}>
       {children}
     </div>
   )
