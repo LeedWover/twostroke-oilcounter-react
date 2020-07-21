@@ -2,11 +2,10 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <footer className="footer">
       
-      <div>Version 1.0.0</div>
-      <div>Hibajelentés: aresone.gaben@gmail.com</div>  
-    </div>
+      <div>Version 1.0.0</div>  
+    </footer>
   )
 }
 

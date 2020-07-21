@@ -121,7 +121,7 @@ const App = () => {
           </div>
         </div>
         <hr/>
-        <div className="text">Mentett előzmények:</div>
+        <div className="title">Mentett előzmények:</div>
         <div className="result-list">
           {savedList && savedList.map((item, index) => (
             <div key={index} className="list-item">
